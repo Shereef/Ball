@@ -21,6 +21,9 @@ namespace Ball
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Texture2D ballTexture;                   // image file
+        static int ballcount;
+        Ball ball1;
+        Ball ball2;
 
         public Game1()
         {
@@ -36,8 +39,7 @@ namespace Ball
         /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
-
+            ballcount = 0;
             base.Initialize();
         }
 
@@ -51,6 +53,8 @@ namespace Ball
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             ballTexture = Content.Load<Texture2D>("Images\\ball");
+            ball1 = new Ball(++ballcount, ballTexture, new Vector2(100, 100));
+            ball2 = new Ball(++ballcount, ballTexture, new Vector2(200, 200));
         }
 
         /// <summary>
@@ -86,7 +90,15 @@ namespace Ball
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
+            spriteBatch.Begin(SpriteBlendMode.AlphaBlend); // start drawing 2D images
+
+            spriteBatch.Draw(ball1.Texture, ball1.Position, null, Color.White,
+                                 ball1.Rotation, ball1.Center, 1.0f, SpriteEffects.None, 0.0f);
+
+            spriteBatch.Draw(ball2.Texture, ball2.Position, null, Color.White,
+                                 ball2.Rotation, ball2.Center, 1.0f, SpriteEffects.None, 0.0f);
+
+            spriteBatch.End();                             // stop drawing 2D images
 
             base.Draw(gameTime);
         }
