@@ -11,9 +11,29 @@ namespace Ball
     {
         int id;
         Texture2D texture;
+
+        public Texture2D Texture
+        {
+            get { return texture; }
+        }
         Vector2 position = new Vector2(100.0f, 100.0f);
+
+        public Vector2 Position
+        {
+            get { return position; }
+        }
         float rotation;
+
+        public float Rotation
+        {
+            get { return rotation; }
+        }
         Vector2 center;
+
+        public Vector2 Center
+        {
+            get { return center; }
+        }
         int width, height;
         Color[] color;
         public Ball(int ballcount, Texture2D ballTexture)
