@@ -4,3 +4,4 @@ Ball/Content/obj
 *.pdb
 Ball/bin
 Ball/obj
+*.suo

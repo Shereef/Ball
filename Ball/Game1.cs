@@ -20,6 +20,7 @@ namespace Ball
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        Texture2D ballTexture;                   // image file
 
         public Game1()
         {
@@ -49,7 +50,7 @@ namespace Ball
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            // TODO: use this.Content to load your game content here
+            ballTexture = Content.Load<Texture2D>("Images\\ball");
         }
 
         /// <summary>
