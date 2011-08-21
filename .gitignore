@@ -1,0 +1,6 @@
+*.cachefile
+Ball/Content/obj
+*.exe
+*.pdb
+Ball/bin
+Ball/obj
