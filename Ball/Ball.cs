@@ -16,7 +16,7 @@ namespace Ball
         {
             get { return texture; }
         }
-        Vector2 position = new Vector2(100.0f, 100.0f);
+        Vector2 position;
 
         public Vector2 Position
         {
@@ -36,10 +36,11 @@ namespace Ball
         }
         int width, height;
         Color[] color;
-        public Ball(int ballcount, Texture2D ballTexture)
+        public Ball(int ballcount, Texture2D ballTexture, Vector2 startPosition)
         {
             id = ballcount;
             texture = ballTexture;
+            position = startPosition;
             width = texture.Width;
             height = texture.Height;
             center = new Vector2(width / 2, height / 2);
