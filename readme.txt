@@ -1,0 +1,1 @@
+This is a simple example i created for my students to show them that Collision detection in 2D is simple no matter what the shapes look like, the Collision detection functions are like a boiler plate always the same!
