@@ -29,7 +29,24 @@ namespace Ball
             get { return center; }
         }
         int width, height;
+
+        public int Height
+        {
+            get { return height; }
+            set { height = value; }
+        }
+
+        public int Width
+        {
+            get { return width; }
+            set { width = value; }
+        }
         Color[] color;
+
+        public Color[] Color
+        {
+            get { return color; }
+        }
         public Ball(int ballcount, Texture2D ballTexture, Vector2 startPosition)
         {
             id = ballcount;
@@ -81,6 +98,11 @@ namespace Ball
             // ball within window bounds so update position
             else
                 position.Y += speed.Y * timeLapse;*/
+        }
+
+        public void InvertSpeedX()
+        {
+            speed.X *= -1.0f; 
         }
     }
 }
