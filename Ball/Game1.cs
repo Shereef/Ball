@@ -54,7 +54,7 @@ namespace Ball
 
             ballTexture = Content.Load<Texture2D>("Images\\ball");
             ball1 = new Ball(++ballcount, ballTexture, new Vector2(100, 100));
-            ball2 = new Ball(++ballcount, ballTexture, new Vector2(200, 200));
+            ball2 = new Ball(++ballcount, ballTexture, new Vector2(400, 100));
         }
 
         /// <summary>
@@ -77,7 +77,8 @@ namespace Ball
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
-            // TODO: Add your update logic here
+            ball1.Move(gameTime, Window.ClientBounds.Width, Window.ClientBounds.Height);
+            ball2.Move(gameTime, Window.ClientBounds.Width, Window.ClientBounds.Height);
 
             base.Update(gameTime);
         }
@@ -93,10 +94,10 @@ namespace Ball
             spriteBatch.Begin(SpriteBlendMode.AlphaBlend); // start drawing 2D images
 
             spriteBatch.Draw(ball1.Texture, ball1.Position, null, Color.White,
-                                 ball1.Rotation, ball1.Center, 1.0f, SpriteEffects.None, 0.0f);
+                                 0, ball1.Center, 1.0f, SpriteEffects.None, 0.0f);
 
             spriteBatch.Draw(ball2.Texture, ball2.Position, null, Color.White,
-                                 ball2.Rotation, ball2.Center, 1.0f, SpriteEffects.None, 0.0f);
+                                 0, ball2.Center, 1.0f, SpriteEffects.None, 0.0f);
 
             spriteBatch.End();                             // stop drawing 2D images
 
